@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principles of Marketing - Class Deck</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .presentation {
+      width: 90vw;
+      max-width: 960px;
+      height: 75vh;
+      max-height: 600px;
+      background-color: #1e293b;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #334155;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      transform: translateX(25px);
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+    }
+
+    /* Typography */
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+
+    h1 { font-size: 2.75rem; color: #f8fafc; margin-bottom: 1rem; line-height: 1.2; }
+    h2 { font-size: 2.1rem; color: #38bdf8; margin-bottom: 1.25rem; }
+    p { font-size: 1.2rem; line-height: 1.6; color: #94a3b8; }
+
+    /* Layout Grids */
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: #0f172a;
+      padding: 1.25rem;
+      border-radius: 10px;
+      border: 1px solid #334155;
+    }
+
+    .card h3 { color: #f1f5f9; font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .card p { font-size: 0.95rem; color: #94a3b8; }
+
+    .grid-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .metric-box {
+      background: rgba(56, 189, 248, 0.05);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .metric-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-label { font-size: 0.9rem; color: #cbd5e1; }
+
+    ul.marketing-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    ul.marketing-list li {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    ul.marketing-list li::before {
+      content: "•";
+      color: #38bdf8;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    /* Navigation Controls */
+    .controls {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 2rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    button {
+      background-color: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover { background-color: #7dd3fc; }
+    button:disabled { background-color: #334155; color: #64748b; cursor: not-allowed; }
+
+    .counter {
+      position: absolute;
+      bottom: 1.8rem;
+      left: 2rem;
+      font-size: 0.9rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<div class="presentation">
+  <!-- Slide 1: Title -->
+  <div class="slide active">
+    <span class="badge">Marketing 101</span>
+    <h1>Principles of Marketing & Strategy</h1>
+    <p>Understanding customer value, market positioning, and performance metrics.</p>
+  </div>
+
+  <!-- Slide 2: The 4 Ps -->
+  <div class="slide">
+    <span class="badge">Core Framework</span>
+    <h2>The 4 Ps of Marketing</h2>
+    <div class="grid-4">
+      <div class="card">
+        <h3>1. Product</h3>
+        <p>The goods or services offered to meet consumer demand.</p>
+      </div>
+      <div class="card">
+        <h3>2. Price</h3>
+        <p>The amount customers pay and the strategy behind positioning.</p>
+      </div>
+      <div class="card">
+        <h3>3. Place</h3>
+        <p>Distribution channels used to get the product to consumers.</p>
+      </div>
+      <div class="card">
+        <h3>4. Promotion</h3>
+        <p>Advertising, PR, social media, and sales communication.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: Segmentation -->
+  <div class="slide">
+    <span class="badge">Targeting Strategy</span>
+    <h2>Market Segmentation</h2>
+    <p>Dividing a broad market into subsets of consumers with common needs:</p>
+    <ul class="marketing-list">
+      <li><strong>Demographic:</strong> Age, gender, income, education</li>
+      <li><strong>Geographic:</strong> Location, climate, urban vs. rural</li>
+      <li><strong>Psychographics:</strong> Lifestyle, values, personality traits</li>
+      <li><strong>Behavioral:</strong> Purchasing habits, brand interactions, loyalty</li>
+    </ul>
+  </div>
+
+  <!-- Slide 4: Key Performance Indicators -->
+  <div class="slide">
+    <span class="badge">Analytics</span>
+    <h2>Marketing Key Metrics</h2>
+    <p>How modern marketers measure success and ROI:</p>
+    <div class="grid-metrics">
+      <div class="metric-box">
+        <div class="metric-number">CAC</div>
+        <div class="metric-label">Customer Acquisition Cost</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-number">LTV</div>
+        <div class="metric-label">Customer Lifetime Value</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-number">ROAS</div>
+        <div class="metric-label">Return on Ad Spend</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 5: Key Takeaways -->
+  <div class="slide">
+    <span class="badge">Conclusion</span>
+    <h2>Key Takeaways</h2>
+    <ul class="marketing-list">
+      <li>Marketing starts with deeply understanding consumer needs.</li>
+      <li>Balance long-term brand building with short-term lead generation.</li>
+      <li>Measure CAC vs. LTV to ensure sustainable unit economics.</li>
+    </ul>
+  </div>
+
+  <!-- Slide Counter & Navigation -->
+  <div class="counter" id="counter">Slide 1 / 5</div>
+  <div class="controls">
+    <button id="prevBtn" disabled>← Prev</button>
+    <button id="nextBtn">Next →</button>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const counter = document.getElementById('counter');
+  let currentSlide = 0;
+
+  function updateSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+    counter.textContent = `Slide ${index + 1} / ${slides.length}`;
+    
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === slides.length - 1;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentSlide < slides.length - 1) {
+      currentSlide++;
+      updateSlide(currentSlide);
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateSlide(currentSlide);
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.key === 'ArrowRight' || e.key === ' ') && currentSlide < slides.length - 1) {
+      currentSlide++;
+      updateSlide(currentSlide);
+    } else if (e.key === 'ArrowLeft' && currentSlide > 0) {
+      currentSlide--;
+      updateSlide(currentSlide);
+    }
+  });
+</script>
+
+</body>
+</html>
